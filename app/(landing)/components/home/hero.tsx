@@ -12,7 +12,7 @@ const HeroSection = () => {
           width={350}
           height={340}
           alt="image sporton"
-          className="grayscale absolute left-10 top-0"
+          className="grayscale absolute left-10 top-3"
         />
 
         <div className="relative ml-50 mt-20 max-w-[650px]">

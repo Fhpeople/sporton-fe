@@ -1,35 +1,14 @@
+import { getImageUrl } from "@/app/lib/api";
+import { Category } from "@/app/types";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowRight } from "react-icons/fi";
 
-const categoryList = [
-  {
-    name: "Running",
-    imgUrl: "category-running.svg",
-  },
-  {
-    name: "Tennis",
-    imgUrl: "category-tennis.svg",
-  },
-  {
-    name: "Basketball",
-    imgUrl: "category-basketball.svg",
-  },
-  {
-    name: "Football",
-    imgUrl: "category-football.svg",
-  },
-  {
-    name: "Badminton",
-    imgUrl: "category-badminton.svg",
-  },
-  {
-    name: "Swimming",
-    imgUrl: "category-swimming.svg",
-  },
-];
+type TCategoriesProps = {
+  categories: Category[]
+}
 
-const CategoriesSection = () => {
+const CategoriesSection = ({categories}: TCategoriesProps) => {
   return (
     <section id="category-section" className="container mx-auto pb-20 px-20 pt-20">
       
@@ -45,13 +24,13 @@ const CategoriesSection = () => {
       </div>
 
       <div className="grid grid-cols-6 gap-6 mt-10 max-w-6xl mx-auto justify-items-center">
-        {categoryList.map((category, index) => (
+        {categories.map((category) => (
           <div
-            key={index}
+            key={category._id}
             className="rounded-xl bg-gradient-to-r from-[#F1F1F1] to-[#F7F7F7] w-[140px] h-[140px] flex flex-col justify-center items-center hover:shadow-lg transition-all cursor-pointer"
           >
             <Image
-              src={`/images/categories/${category.imgUrl}`}
+              src={getImageUrl(category.imageUrl)}
               width={65}
               height={65}
               alt={category.name}

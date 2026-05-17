@@ -14,7 +14,7 @@ const OrderConfirmed = () => {
         alt="order confirmed"
         className="mb-3"
       />
-      <h2 className="text-2xl font-semibold mb-2">Order Confirmed!!</h2>
+      <h2 className="text-2xl font-semibold mb-2">Order Confirmed</h2>
       <p className="text-center mb-8">
         We have received your payment, and your order is currently processed by
         our staff, just wait until your favorite sportswear arrive in your home.
